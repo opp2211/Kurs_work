@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane fx:id="tabPane_system" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1100.0" style="-fx-border-color: black;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
+  <tabs>
+      <Tab fx:id="buyop_tab" text="Операции покупки">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_buyop" layoutX="240.0" layoutY="9.0" onMouseClicked="#getSelected" prefHeight="511.0" prefWidth="851.0" style="-fx-border-color: black;">
+                    <columns>
+                      <TableColumn fx:id="col_buyop_id" prefWidth="74.0" text="ID" />
+                      <TableColumn fx:id="col_buyop_date" prefWidth="88.0" text="DATE" />
+                        <TableColumn fx:id="col_buyop_quantity" prefWidth="92.0" text="QUANTITY" />
+                        <TableColumn fx:id="col_buyop_price" prefWidth="73.66668701171875" text="PRICE" />
+                        <TableColumn fx:id="col_buyop_cost" prefWidth="101.33331298828125" text="COST" />
+                        <TableColumn fx:id="col_buyop_game" prefWidth="150.0" text="GAME" />
+                        <TableColumn fx:id="col_buyop_supplier" prefWidth="120.66668701171875" text="SUPPLIER" />
+                        <TableColumn fx:id="col_buyop_payacc" prefWidth="163.0" text="PAYMENT_ACCOUNT" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="load_buyop" layoutX="10.0" layoutY="307.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button fx:id="delete_buyop_data" layoutX="8.0" layoutY="431.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button fx:id="update_buyop_data" layoutX="10.0" layoutY="391.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button fx:id="add_buyop_data" layoutX="10.0" layoutY="349.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <TextField fx:id="txt_buyop_id" editable="false" layoutX="11.0" layoutY="9.0" prefHeight="30.0" prefWidth="220.0" promptText="Id" />
+                  <TextField fx:id="txt_buyop_date" layoutX="10.0" layoutY="46.0" prefHeight="30.0" prefWidth="220.0" promptText="Date" />
+                  <TextField fx:id="txt_buyop_quantity" layoutX="10.0" layoutY="83.0" prefHeight="30.0" prefWidth="220.0" promptText="Quantity" />
+                  <TextField fx:id="txt_buyop_cost" layoutX="10.0" layoutY="157.0" prefHeight="30.0" prefWidth="220.0" promptText="Cost" />
+                  <TextField fx:id="txt_buyop_game" layoutX="10.0" layoutY="194.0" prefHeight="30.0" prefWidth="220.0" promptText="Game" />
+                  <TextField fx:id="txt_buyop_supplier" layoutX="10.0" layoutY="231.0" prefHeight="30.0" prefWidth="220.0" promptText="Supplier" />
+                  <TextField fx:id="txt_buyop_payacc" layoutX="10.0" layoutY="268.0" prefHeight="30.0" prefWidth="220.0" promptText="Payment_account" />
+                  <TextField fx:id="txt_buyop_price" layoutX="10.0" layoutY="120.0" prefHeight="30.0" prefWidth="220.0" promptText="Price" />
+                  <Button fx:id="clear_txt_buyop" layoutX="8.0" layoutY="471.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="financialop_tab" text="Финансовые операции">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_financialop" layoutX="240.0" layoutY="8.0" onMouseClicked="#getSelected" prefHeight="512.0" prefWidth="851.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_financialop_id" prefWidth="53.0" text="ID" />
+                        <TableColumn fx:id="col_financialop_date" prefWidth="128.0" text="DATE" />
+                        <TableColumn fx:id="col_financialop_val" prefWidth="172.0" text="VALUE" />
+                        <TableColumn fx:id="col_financialop_comment" prefWidth="151.0" text="COMMENT" />
+                        <TableColumn fx:id="col_financialop_payaccname" prefWidth="200.0" text="PAYMENT_ACCOUNT_NAME" />
+                        <TableColumn fx:id="col_financialop_type" prefWidth="145.0" text="TYPE" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_financialop" layoutX="10.0" layoutY="233.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_financialop_data" layoutX="10.0" layoutY="359.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_financialop_data" layoutX="10.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_financialop_data" layoutX="10.0" layoutY="275.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_financialop_id" editable="false" layoutX="11.0" layoutY="9.0" prefHeight="30.0" prefWidth="220.0" promptText="Id" />
+                  <TextField fx:id="txt_financialop_date" layoutX="10.0" layoutY="46.0" prefHeight="30.0" prefWidth="220.0" promptText="Date" />
+                  <TextField fx:id="txt_financialop_value" layoutX="10.0" layoutY="83.0" prefHeight="30.0" prefWidth="220.0" promptText="Value" />
+                  <TextField fx:id="txt_financialop_payaccname" layoutX="10.0" layoutY="157.0" prefHeight="30.0" prefWidth="220.0" promptText="Payment account name" />
+                  <TextField fx:id="txt_financialop_type" layoutX="10.0" layoutY="194.0" prefHeight="30.0" prefWidth="220.0" promptText="Type" />
+                  <TextField fx:id="txt_financialop_comment" layoutX="10.0" layoutY="120.0" prefHeight="30.0" prefWidth="220.0" promptText="Comment" />
+                  <Button fx:id="clear_txt_financialop" layoutX="10.0" layoutY="401.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="finoptype_tab" text="Типы операций">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_finoptype" layoutX="744.0" layoutY="8.0" onMouseClicked="#getSelected" prefHeight="515.0" prefWidth="355.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_finoptype_id" prefWidth="77.0" text="ID" />
+                        <TableColumn fx:id="col_finoptype_name" prefWidth="276.0" text="NAME" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_finoptype_data" layoutX="413.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_finoptype_data" layoutX="414.0" layoutY="215.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_finoptype_data" layoutX="414.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_finoptype_data" layoutX="414.0" layoutY="130.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_finoptype_id" layoutX="413.0" layoutY="7.0" prefHeight="30.0" prefWidth="320.0" promptText="Id" />
+                  <Button fx:id="clear_txt_finoptype" layoutX="414.0" layoutY="258.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_finoptype_name" layoutX="414.0" layoutY="47.0" prefHeight="30.0" prefWidth="320.0" promptText="Name" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="exchange_tab" text="Обмен">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_exchange" layoutX="240.0" layoutY="8.0" onMouseClicked="#getSelected" prefHeight="512.0" prefWidth="851.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_exchange_id" prefWidth="53.0" text="ID" />
+                        <TableColumn fx:id="col_exchange_date" prefWidth="128.0" text="DATE" />
+                        <TableColumn fx:id="col_exchange_creditacc" prefWidth="220.0" text="CREDIT_ACCOUNT" />
+                        <TableColumn fx:id="col_exchange_creditval" prefWidth="103.0" text="CREDIT_VALUE" />
+                        <TableColumn fx:id="col_exchange_debitacc" prefWidth="200.0" text="DEBIT_ACCOUNT" />
+                        <TableColumn fx:id="col_exchange_debitval" prefWidth="145.0" text="DEBIT_VALUE" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_exchange" layoutX="10.0" layoutY="233.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_exchange_data" layoutX="10.0" layoutY="359.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_exchange_data" layoutX="10.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_exchange_data" layoutX="10.0" layoutY="275.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_exchange_id" editable="false" layoutX="11.0" layoutY="9.0" prefHeight="30.0" prefWidth="220.0" promptText="Id" />
+                  <TextField fx:id="txt_exchange_date" layoutX="10.0" layoutY="46.0" prefHeight="30.0" prefWidth="220.0" promptText="Date" />
+                  <TextField fx:id="txt_exchange_creditacc" layoutX="10.0" layoutY="83.0" prefHeight="30.0" prefWidth="220.0" promptText="Credit account" />
+                  <TextField fx:id="txt_exchange_debitacc" layoutX="10.0" layoutY="157.0" prefHeight="30.0" prefWidth="220.0" promptText="Debit account" />
+                  <TextField fx:id="txt_exchange_debitval" layoutX="10.0" layoutY="194.0" prefHeight="30.0" prefWidth="220.0" promptText="Debit value" />
+                  <TextField fx:id="txt_exchange_creditval" layoutX="10.0" layoutY="120.0" prefHeight="30.0" prefWidth="220.0" promptText="Credit value" />
+                  <Button fx:id="clear_txt_exchange" layoutX="10.0" layoutY="401.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="buyer_tab" text="Покупатели">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_buyer" layoutX="743.0" layoutY="8.0" onMouseClicked="#getSelected" prefHeight="515.0" prefWidth="356.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_buyer_id" prefWidth="127.0" text="ID" />
+                        <TableColumn fx:id="col_buyer_name" prefWidth="227.0" text="NAME" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_buyer_data" layoutX="413.0" layoutY="87.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_buyer_data" layoutX="414.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_buyer_data" layoutX="414.0" layoutY="171.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_buyer_data" layoutX="414.0" layoutY="129.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_buyer_id" layoutX="413.0" layoutY="7.0" prefHeight="30.0" prefWidth="320.0" promptText="Id" />
+                  <Button fx:id="clear_txt_buyer" layoutX="414.0" layoutY="257.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_buyer_name" layoutX="414.0" layoutY="47.0" prefHeight="30.0" prefWidth="320.0" promptText="Name" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="game_tab" text="Игры">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_game" layoutX="744.0" layoutY="9.0" onMouseClicked="#getSelected" prefHeight="515.0" prefWidth="355.0" style="-fx-border-color: black;">
+                    <columns>
+                      <TableColumn fx:id="col_game_id" prefWidth="116.0" text="ID" />
+                        <TableColumn fx:id="col_game_name" prefWidth="237.0" text="NAME" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="load_game" layoutX="413.0" layoutY="87.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_game_data" layoutX="414.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_game_data" layoutX="414.0" layoutY="171.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_game_data" layoutX="414.0" layoutY="129.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_game_id" layoutX="413.0" layoutY="8.0" prefHeight="30.0" prefWidth="320.0" promptText="Id" />
+                  <Button fx:id="clear_txt_game" layoutX="414.0" layoutY="257.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_game_name" layoutX="413.0" layoutY="47.0" prefHeight="30.0" prefWidth="320.0" promptText="Name" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="sellop_tab" text="Продажи">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_sellop" layoutX="240.0" layoutY="9.0" onMouseClicked="#getSelected" prefHeight="511.0" prefWidth="851.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_sellop_id" prefWidth="58.0" text="ID" />
+                        <TableColumn fx:id="col_sellop_date" prefWidth="104.0" text="DATE" />
+                        <TableColumn fx:id="col_sellop_quantity" prefWidth="92.0" text="QUANTITY" />
+                        <TableColumn fx:id="col_sellop_price" prefWidth="73.66668701171875" text="PRICE" />
+                        <TableColumn fx:id="col_sellop_cost" prefWidth="101.33331298828125" text="COST" />
+                        <TableColumn fx:id="col_sellop_payacc" prefWidth="150.0" text="PAYMENT_ACCOUNT" />
+                        <TableColumn fx:id="col_sellop_buyer" prefWidth="120.66668701171875" text="BUYER" />
+                        <TableColumn fx:id="col_sellop_game" prefWidth="163.0" text="GAME" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_sellop" layoutX="10.0" layoutY="307.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_sellop_data" layoutX="8.0" layoutY="431.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_sellop_data" layoutX="10.0" layoutY="391.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_sellop_data" layoutX="10.0" layoutY="349.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_sellop_id" editable="false" layoutX="11.0" layoutY="9.0" prefHeight="30.0" prefWidth="220.0" promptText="Id" />
+                  <TextField fx:id="txt_sellop_date" layoutX="10.0" layoutY="46.0" prefHeight="30.0" prefWidth="220.0" promptText="Date" />
+                  <TextField fx:id="txt_sellop_quantity" layoutX="10.0" layoutY="83.0" prefHeight="30.0" prefWidth="220.0" promptText="Quantity" />
+                  <TextField fx:id="txt_sellop_cost" layoutX="10.0" layoutY="157.0" prefHeight="30.0" prefWidth="220.0" promptText="Cost" />
+                  <TextField fx:id="txt_sellop_payacc" layoutX="10.0" layoutY="194.0" prefHeight="30.0" prefWidth="220.0" promptText="Payment account" />
+                  <TextField fx:id="txt_sellop_buyer" layoutX="10.0" layoutY="231.0" prefHeight="30.0" prefWidth="220.0" promptText="Buyer" />
+                  <TextField fx:id="txt_sellop_game" layoutX="10.0" layoutY="268.0" prefHeight="30.0" prefWidth="220.0" promptText="Game" />
+                  <TextField fx:id="txt_sellop_price" layoutX="10.0" layoutY="120.0" prefHeight="30.0" prefWidth="220.0" promptText="Price" />
+                  <Button fx:id="clear_txt_sellop" layoutX="8.0" layoutY="471.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="gamecurop_tab" text="Операции с игровой валютой">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_gamecurop" layoutX="569.0" layoutY="8.0" onMouseClicked="#getSelected" prefHeight="512.0" prefWidth="522.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_gamecurop_id" prefWidth="53.0" text="ID" />
+                        <TableColumn fx:id="col_gamecurop_date" prefWidth="104.0" text="DATE" />
+                        <TableColumn fx:id="col_gamecurop_quantity" prefWidth="110.33331298828125" text="QUANTITY" />
+                        <TableColumn fx:id="col_gamecurop_comment" prefWidth="117.33331298828125" text="COMMENT" />
+                        <TableColumn fx:id="col_gamecurop_game" prefWidth="134.0" text="GAME" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_gamecurop" layoutX="238.0" layoutY="197.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_gamecurop_data" layoutX="238.0" layoutY="323.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_gamecurop_data" layoutX="238.0" layoutY="281.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_gamecurop_data" layoutX="238.0" layoutY="239.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_gamecurop_id" editable="false" layoutX="239.0" layoutY="9.0" prefHeight="30.0" prefWidth="320.0" promptText="Id" />
+                  <TextField fx:id="txt_gamecurop_date" layoutX="238.0" layoutY="46.0" prefHeight="30.0" prefWidth="320.0" promptText="Date" />
+                  <TextField fx:id="txt_gamecurop_quantity" layoutX="238.0" layoutY="83.0" prefHeight="30.0" prefWidth="320.0" promptText="Quantity" />
+                  <TextField fx:id="txt_gamecurop_game" layoutX="238.0" layoutY="157.0" prefHeight="30.0" prefWidth="320.0" promptText="Game" />
+                  <TextField fx:id="txt_gamecurop_comment" layoutX="238.0" layoutY="120.0" prefHeight="30.0" prefWidth="320.0" promptText="Comment" />
+                  <Button fx:id="clear_txt_gamecurop" layoutX="238.0" layoutY="365.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="supplier_tab" text="Поставщики">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_supplier" layoutX="240.0" layoutY="8.0" onMouseClicked="#getSelected" prefHeight="512.0" prefWidth="851.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_supplier_id" prefWidth="53.0" text="ID" />
+                        <TableColumn fx:id="col_supplier_name" prefWidth="104.0" text="NAME" />
+                        <TableColumn fx:id="col_supplier_funname" prefWidth="110.33331298828125" text="FUNPAY_NAME" />
+                        <TableColumn fx:id="col_supplier_discord" prefWidth="117.33331298828125" text="DISCORD_NAME" />
+                        <TableColumn fx:id="col_supplier_price" prefWidth="75.0" text="PRICE" />
+                        <TableColumn fx:id="col_supplier_paymeth" prefWidth="161.33331298828125" text="PAYMENT_METHOD" />
+                        <TableColumn fx:id="col_supplier_payaddr" minWidth="0.0" prefWidth="124.0" text="PAYMENT_ADRESS" />
+                        <TableColumn fx:id="col_supplier_game" prefWidth="102.0" text="GAME" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_supplier" layoutX="11.0" layoutY="305.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_supplier_data" layoutX="11.0" layoutY="431.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_supplier_data" layoutX="11.0" layoutY="389.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_supplier_data" layoutX="11.0" layoutY="347.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_supplier_id" editable="false" layoutX="11.0" layoutY="9.0" prefHeight="30.0" prefWidth="220.0" promptText="Id" />
+                  <TextField fx:id="txt_supplier_name" layoutX="10.0" layoutY="46.0" prefHeight="30.0" prefWidth="220.0" promptText="Name" />
+                  <TextField fx:id="txt_supplier_funname" layoutX="10.0" layoutY="83.0" prefHeight="30.0" prefWidth="220.0" promptText="Funpay name" />
+                  <TextField fx:id="txt_supplier_price" layoutX="10.0" layoutY="157.0" prefHeight="30.0" prefWidth="220.0" promptText="Price" />
+                  <TextField fx:id="txt_supplier_paymeth" layoutX="10.0" layoutY="194.0" prefHeight="30.0" prefWidth="220.0" promptText="Payment method" />
+                  <TextField fx:id="txt_supplier_discord" layoutX="10.0" layoutY="120.0" prefHeight="30.0" prefWidth="220.0" promptText="Discord name" />
+                  <Button fx:id="clear_txt_supplier" layoutX="11.0" layoutY="473.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_supplier_payaddr" layoutX="10.0" layoutY="231.0" prefHeight="30.0" prefWidth="220.0" promptText="Payment address" />
+                  <TextField fx:id="txt_supplier_game" layoutX="11.0" layoutY="268.0" prefHeight="30.0" prefWidth="220.0" promptText="Game" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="payment_tab" text="Платежные системы">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_payment" layoutX="747.0" layoutY="6.0" onMouseClicked="#getSelected" prefHeight="515.0" prefWidth="350.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="col_payment_id" prefWidth="113.0" text="ID" />
+                        <TableColumn fx:id="col_payment_name" prefWidth="235.0" text="NAME" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="load_payment" layoutX="413.0" layoutY="87.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #46ccdb; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Загрузить данные" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete_payment_data" layoutX="414.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #DC143C; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Удалить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_payment_data" layoutX="414.0" layoutY="171.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #EE82EE; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_payment_data" layoutX="414.0" layoutY="129.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #00ff8c; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Добавить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_payment_id" layoutX="413.0" layoutY="7.0" prefHeight="30.0" prefWidth="320.0" promptText="Id" />
+                  <Button fx:id="clear_txt_payment" layoutX="414.0" layoutY="257.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="320.0" style="-fx-background-color: #5f6fd4; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Очистить поля ввода" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txt_payment_name" layoutX="413.0" layoutY="47.0" prefHeight="30.0" prefWidth="320.0" promptText="Name" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="querys_tab" text="Запросы">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table_getBuyOpsSupp" layoutX="7.0" layoutY="14.0" prefHeight="200.0" prefWidth="309.0">
+                    <columns>
+                      <TableColumn fx:id="col_getBuyOpsSupp_id" prefWidth="54.0" text="ID" />
+                      <TableColumn fx:id="col_getBuyOpsSupp_price" prefWidth="107.0" text="PRICE" />
+                        <TableColumn fx:id="col_getBuyOpsSupp_supplier" prefWidth="147.0" text="SUPPLIER" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="326.0" layoutY="14.0" prefHeight="105.0" prefWidth="175.0" text="Вывести список операций закупки, которые были совершены с поставщиками, договоренная цена, с которыми равна заданному промежутку:" textAlignment="CENTER" wrapText="true" />
+                  <TextField fx:id="txt_getBuyOpsSupp_min" layoutX="326.0" layoutY="125.0" prefHeight="25.0" prefWidth="173.0" promptText="Минимальная" />
+                  <TextField fx:id="txt_getBuyOpsSupp_max" layoutX="326.0" layoutY="159.0" prefHeight="25.0" prefWidth="173.0" promptText="Максимальная" />
+                  <Button fx:id="execute_getBuyOpsSupp" layoutX="326.0" layoutY="194.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="Выполнить" />
+                  <TableView fx:id="table_getExchangeType" layoutX="599.0" layoutY="19.0" prefHeight="200.0" prefWidth="309.0">
+                    <columns>
+                      <TableColumn fx:id="col_getExchangeType_id" prefWidth="89.0" text="ID" />
+                      <TableColumn fx:id="col_getExchangeType_creditacc" prefWidth="219.0" text="CREDIT_ACCOUNT" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="execute_getExchangeType" layoutX="918.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="Выполнить" />
+                  <Label layoutX="918.0" layoutY="19.0" prefHeight="98.0" prefWidth="173.0" text="Вывести счет из операций обмена, такой, чтобы по данному счету была хотя бы одна операция заданного типа:" textAlignment="CENTER" wrapText="true" />
+                  <ComboBox fx:id="combobox_getExchangeType_types" layoutX="918.0" layoutY="120.0" prefHeight="25.0" prefWidth="173.0" />
+                  <TableView fx:id="table_getBuyerDate" layoutX="7.0" layoutY="271.0" prefHeight="200.0" prefWidth="309.0">
+                     <columns>
+                        <TableColumn fx:id="col_getBuyerDate_id" prefWidth="84.0" text="ID" />
+                        <TableColumn fx:id="col_getBuyerDate_name" prefWidth="224.0" text="NAME" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="326.0" layoutY="271.0" prefHeight="79.0" prefWidth="173.0" text="Вывести список покупателей, с которыми имеется операция продажи за указанную дату:" textAlignment="CENTER" wrapText="true" />
+                  <ComboBox fx:id="combobox_getBuyerDate_dates" layoutX="326.0" layoutY="342.0" prefHeight="25.0" prefWidth="173.0" />
+                  <Button fx:id="execute_getBuyerDate" layoutX="326.0" layoutY="377.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="Выполнить" />
+                  <TableView fx:id="table_getSupplierQuantity" layoutX="567.0" layoutY="271.0" prefHeight="200.0" prefWidth="341.0">
+                     <columns>
+                        <TableColumn fx:id="col_getSupplierQuantity_id" prefWidth="41.0" text="ID" />
+                        <TableColumn fx:id="col_getSupplierQuantity_name" prefWidth="83.0" text="NAME" />
+                        <TableColumn fx:id="col_getSupplierQuantity_funpayname" prefWidth="100.0" text="FUNPAY_NAME" />
+                        <TableColumn fx:id="col_getSupplierQuantity_discordname" prefWidth="116.0" text="DISCORD_NAME" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="918.0" layoutY="271.0" prefHeight="79.0" prefWidth="173.0" text="Вывести список поставщиков, с которыми была хоть одна сделка больше указанного количества:" textAlignment="CENTER" wrapText="true" />
+                  <TextField fx:id="txt_getSupplierQuantity_quantity" layoutX="918.0" layoutY="351.0" prefHeight="25.0" prefWidth="173.0" promptText="Количество" />
+                  <Button fx:id="execute_getSupplierQuantity" layoutX="918.0" layoutY="386.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="Выполнить" />
+               </children></AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
